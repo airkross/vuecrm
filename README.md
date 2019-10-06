@@ -1,5 +1,6 @@
 # hello-world
 
+https://vue-spa-crm.web.app/
 ## Project setup
 ```
 npm install
