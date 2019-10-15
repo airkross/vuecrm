@@ -18,7 +18,6 @@ export default {
                 // })
                 // return cats;
 
-                // более локоничный алгоритм переделывания массива в более удобный для нас
                 // формируем новый объект запихивая в него оба параметра которые есть в массиве под индексом categories[key] при помощи spread ...
                 // и дополнительно вставляем в объект id: key по скольку его нет в массиве под индексом categories[key]
                 return Object.keys(categories).map(key => ({ ...categories[key], id: key }));
@@ -31,19 +30,7 @@ export default {
             try {
                 const uid = await dispatch('getUserId');
                 const category = (await firebase.database().ref(`/users/${uid}/categories/`).child(id).once('value')).val() || {};
-                // const cats = []; // массив с удобными id который будем возвращать
-                // // перебираем массив и меняем вид id на более удобный 0,1,2...
-                // console.log(categories);
-                // Object.keys(categories).forEach(key => {
-                //     cats.push({
-                //         title: categories[key].title, // categories[0].title
-                //         limit: categories[key].limit, // categories[0].limit
-                //         id: key
-                //     })
-                // })
-                // return cats;
-
-                // более локоничный алгоритм переделывания массива в более удобный для нас
+                
                 // формируем новый объект запихивая в него оба параметра которые есть в массиве под индексом categories[key] при помощи spread ...
                 // и дополнительно вставляем в объект id: key по скольку его нет в массиве под индексом categories[key]
                 return {...category, id}
